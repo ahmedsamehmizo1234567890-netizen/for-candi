@@ -1,0 +1,36 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>For Candi ❤️</title>
+<style>
+body{margin:0;font-family:Segoe UI;background:linear-gradient(180deg,#081228,#2b1047);color:#fff;overflow:hidden}
+#bg,#hearts{position:fixed;inset:0;pointer-events:none}.s{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;animation:t 2s infinite alternate}.h{position:absolute;color:#ff7aa8;animation:f 9s linear infinite}
+@keyframes t{to{opacity:.2;transform:scale(.4)}}@keyframes f{from{transform:translateY(110vh)}to{transform:translateY(-10vh)}}
+.center{display:flex;align-items:center;justify-content:center;height:100vh;flex-direction:column}
+.card{display:none;max-width:850px;margin:20px auto;background:#ffffff18;padding:24px;border-radius:22px;backdrop-filter:blur(8px)}
+img{max-width:100%;border-radius:18px}.hidden{opacity:0}.show{opacity:1;transition:1s}
+button{background:#ff4f8a;color:#fff;border:none;padding:14px 28px;border-radius:30px;font-size:18px;cursor:pointer}
+#end{display:none;position:fixed;inset:0;background:#000d;align-items:center;justify-content:center;flex-direction:column;font-size:2em;text-align:center}
+</style></head><body>
+<div id=bg></div><div id=hearts></div>
+<div class=center id=intro><h1>A little surprise for Candi ❤️</h1><p>Click below...</p><button onclick="start()">Open your surprise ✨</button></div>
+<div class=card id=card>
+<img src='bear_image.jpg' onerror='this.style.display="none"'>
+<div id=letter></div><div style='text-align:center;margin:30px'><button onclick="end.style.display='flex'">💌 One Last Thing...</button></div></div>
+<div id=end><div>You're stuck with me forever, young lady.... Muhahaha ❤️</div><div style='font-size:.5em;margin-top:10px'>Made with love by Ahmed</div></div>
+<script>
+for(let i=0;i<180;i++){let d=document.createElement('div');d.className='s';d.style.left=Math.random()*100+'vw';d.style.top=Math.random()*100+'vh';bg.appendChild(d)}
+for(let i=0;i<40;i++){let d=document.createElement('div');d.className='h';d.innerHTML='❤';d.style.left=Math.random()*100+'vw';d.style.animationDelay=(Math.random()*9)+'s';hearts.appendChild(d)}
+const lines=[
+"Umm... Hello, Candi 🥸",
+"I wanted to do something for you cuz you make me happy every day, but I didn't know what to do. So I came up with this... it's not much, and maybe it's dumb 😅",
+"<b>For my bestie ❤️</b>",
+"Words will never be enough to tell you how much you mean to me, bestie.......",
+"Thank you for being such an amazing person and such an important part of my life..... Your kindness, your love and the way you always make me smile mean more to me than I can ever explain.",
+"Meeting you is one of the best things that has ever happened to me..... No matter how far apart we are, you make me feel that I have someone who truly cares.... and I really appreciate it ❤️",
+"You are not just my best friend—you are someone I deeply care about, someone I trust, and someone I'm incredibly grateful to have in my life 😁 I think I'm so lucky.",
+"(And thanks for my birthday gift, it's the best gift I have ever had cuz it's from someone so special to me)",
+"I hope I can make you smile the same way you make me smile so many times.",
+"No matter what happens, I hope we stay by each other's side and keep making wonderful memories together.",
+"<b>I love you, twin ❤️😁</b>"
+];
+function start(){intro.style.display='none';card.style.display='block';let i=0;function add(){if(i>=lines.length)return;let p=document.createElement('p');p.className='hidden';p.innerHTML=lines[i++];letter.appendChild(p);setTimeout(()=>p.className='show',50);setTimeout(add,1200)}add();}
+</script></body></html>
